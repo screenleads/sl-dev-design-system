@@ -1,0 +1,9 @@
+@use '../settings';
+
+@function rem($pixels, $context: settings.$base-unit-flat) {
+	@return calc($pixels/$context) * 1rem;
+}
+
+@function em($pixels, $context: settings.$base-unit-flat) {
+	@return calc($pixels/$context) * 1em;
+}

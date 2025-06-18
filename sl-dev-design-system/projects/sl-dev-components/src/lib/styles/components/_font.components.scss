@@ -1,0 +1,135 @@
+@use '../tools' as tools;
+
+.sca-font--display-m {
+	font: var(--sca-font-display-m-extra-large);
+	@include tools.large {
+		font: var(--sca-font-display-m-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-display-m-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-display-m-small);
+	}
+}
+
+.sca-font--display-s {
+	font: var(--sca-font-display-s-extra-large);
+	@include tools.large {
+		font: var(--sca-font-display-s-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-display-s-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-display-s-small);
+	}
+}
+
+.sca-font--primary-headline-l {
+	font: var(--sca-font-primary-headline-l-extra-large);
+	@include tools.large {
+		font: var(--sca-font-primary-headline-l-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-primary-headline-l-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-primary-headline-l-small);
+	}
+}
+
+.sca-font--primary-headline-m {
+	font: var(--sca-font-primary-headline-m-extra-large);
+	@include tools.large {
+		font: var(--sca-font-primary-headline-m-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-primary-headline-m-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-primary-headline-m-small);
+	}
+}
+
+.sca-font--primary-headline-s {
+	font: var(--sca-font-primary-headline-s-extra-large);
+	@include tools.large {
+		font: var(--sca-font-primary-headline-s-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-primary-headline-s-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-primary-headline-s-small);
+	}
+}
+
+.sca-font--secondary-headline-l {
+	font: var(--sca-font-secondary-headline-l-extra-large);
+	@include tools.large {
+		font: var(--sca-font-secondary-headline-l-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-secondary-headline-l-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-secondary-headline-l-small);
+	}
+}
+
+.sca-font--secondary-headline-m {
+	font: var(--sca-font-secondary-headline-m-extra-large);
+	@include tools.large {
+		font: var(--sca-font-secondary-headline-m-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-secondary-headline-m-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-secondary-headline-m-small);
+	}
+}
+
+.sca-font--secondary-headline-s {
+	font: var(--sca-font-secondary-headline-s-extra-large);
+	@include tools.large {
+		font: var(--sca-font-secondary-headline-s-large);
+	}
+	@include tools.medium {
+		font: var(--sca-font-secondary-headline-s-medium);
+	}
+	@include tools.small {
+		font: var(--sca-font-secondary-headline-s-small);
+	}
+}
+
+.sca-font--body-m {
+	font: var(--sca-font-body-m);
+}
+
+.sca-font--body-s {
+	font: var(--sca-font-body-s);
+}
+
+.sca-font--body-xs {
+	font: var(--sca-font-body-xs);
+}
+
+.sca-font--body-xxs {
+	font: var(--sca-font-body-xxs);
+}
+
+[class*='sca-font--primary'],
+[class*='sca-font--display'] {
+	&.sca-font--bold {
+		font-weight: 900;
+	}
+}
+
+[class*='sca-font--secondary'],
+[class*='sca-font--body'] {
+	&.sca-font--bold {
+		font-weight: 900;
+	}
+}

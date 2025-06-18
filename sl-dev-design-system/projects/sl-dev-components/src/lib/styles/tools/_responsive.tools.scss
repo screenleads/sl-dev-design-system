@@ -1,0 +1,63 @@
+@use 'sass:map';
+
+// ===================
+// ** Media Queries **
+// ===================
+
+$mediumMinWidth: 992;
+$largeMinWidth: 1250;
+$extraLargeMinWidth: 1800;
+
+@mixin small {
+	@media only screen and (max-width: $mediumMinWidth - 1px) {
+		@content;
+	}
+}
+
+@mixin fromMedium {
+	@media (min-width: $mediumMinWidth * 1px) {
+		@content;
+	}
+}
+
+@mixin medium {
+	@media (min-width: $mediumMinWidth * 1px) and (max-width: $largeMinWidth - 1px) {
+		@content;
+	}
+}
+
+@mixin fromLarge {
+	@media (min-width: $largeMinWidth * 1px) {
+		@content;
+	}
+}
+
+@mixin large {
+	@media only screen and (min-width: $largeMinWidth * 1px) and (max-width: $extraLargeMinWidth - 1px) {
+		@content;
+	}
+}
+
+@mixin extraLarge {
+	@media only screen and (min-width: $extraLargeMinWidth * 1px) {
+		@content;
+	}
+}
+
+@mixin navigationMedium {
+	@media only screen and (min-width: 1024px) and (max-width: 1249px) {
+		@content;
+	}
+}
+
+@mixin navigationSmall {
+	@media only screen and (max-width: 1023px) {
+		@content;
+	}
+}
+
+@mixin fromNavigationMedium {
+	@media only screen and (min-width: 1024px) {
+		@content;
+	}
+}

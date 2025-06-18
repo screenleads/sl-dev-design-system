@@ -1,0 +1,114 @@
+@use '../../styles/common' as common;
+
+.sca-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--sca-spacing-03) var(--sca-spacing-05);
+	min-height: common.rem(56);
+	cursor: pointer;
+	font-family: var(--sca-font-secondary-font-family);
+	font-size: 1rem;
+	font-weight: 700;
+	border: 0;
+
+	// for the animation
+	position: relative;
+	overflow: hidden;
+	transition: color 0.3s;
+
+	.sca-button__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--sca-spacing-02);
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+	// position children on top of the animation
+	& > * {
+		z-index: 1;
+	}
+
+	// base for the animation
+	&::before {
+		position: absolute;
+
+		// set top, left, right, bottom to 0 and set the element to fill the parent
+		inset: 0;
+		margin: auto;
+
+		// the animation should be a circle, so keep aspect ratio
+		aspect-ratio: 1 / 1;
+		background-color: var(--sca-primary01-border-hover);
+		border-radius: 50%;
+		transition: transform 0.2s;
+		transform: scale(0);
+		z-index: 0;
+	}
+
+	&:not(:disabled) {
+		&::before {
+			content: '';
+		}
+
+		&:hover::before {
+			transform: scale(1.5);
+		}
+
+		// variants
+
+		// variant primary
+		&.sca-button--primary {
+			color: var(--sca-color-neutrals-text-extra-weak);
+			background-color: var(--sca-primary01-background-default);
+
+			&:focus-visible {
+				outline: 0;
+				box-shadow: 0 0 0 4px var(--sca-primary01-background-weak);
+			}
+		}
+
+		// variant border
+		&.sca-button--border {
+			color: var(--sca-primary01-background-default);
+			background-color: var(--sca-neutrals-background-extra-weak);
+			box-shadow: inset 0 0 0 0.125rem var(--sca-primary01-background-default);
+
+			&:hover {
+				color: var(--sca-color-neutrals-text-extra-weak);
+			}
+		}
+	}
+
+	// states
+	&:disabled {
+		color: var(--sca-neutrals-link-disabled);
+		background-color: var(--sca-neutrals-background-disabled);
+		cursor: default;
+	}
+
+	// deshabilita el click en los enlaces
+	a:disabled {
+		pointer-events: none;
+	}
+
+	// sizes
+	&.sca-button--small {
+		padding: var(--sca-spacing-02) var(--sca-spacing-04);
+		min-height: common.rem(40);
+		font: var(--sca-font-body-s);
+		font-weight: 700;
+	}
+}
+
+// specific overrides for the anchor tag
+a.sca-button {
+	text-decoration: none;
+
+	&:visited {
+		color: inherit;
+	}
+}

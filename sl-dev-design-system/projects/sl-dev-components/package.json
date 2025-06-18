@@ -1,0 +1,33 @@
+{
+  "name": "sl-dev-components",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.2.0",
+    "@angular/core": "^18.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "exports": {
+    "./styles/styles.scss": {
+      "sass": "./styles/styles.scss",
+      "style": "./styles/styles.scss"
+    },
+    "./styles/common.scss": {
+      "sass": "./styles/_common.scss"
+    },
+    "./fonts/fonts.scss": {
+      "sass": "./fonts/fonts.scss",
+      "style": "./fonts/fonts.scss"
+    },
+    "./fonts/gilroy.scss": {
+      "sass": "./fonts/gilroy.scss",
+      "style": "./fonts/gilroy.scss"
+    },
+    "./fonts/roboto.scss": {
+      "sass": "./fonts/roboto.scss",
+      "style": "./fonts/roboto.scss"
+    }
+  }
+}

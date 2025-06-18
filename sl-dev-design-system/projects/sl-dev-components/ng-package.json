@@ -1,0 +1,24 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/sl-dev-components",
+  "deleteDestPath": true,
+  "assets": [
+    {
+      "input": "src/lib/styles",
+      "glob": "**/*.scss",
+      "output": "styles"
+    },
+    {
+      "input": "src/lib/fonts",
+      "glob": "**/*",
+      "output": "fonts"
+    }
+  ],
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": [
+      "src/lib/styles",
+      "src/lib/fonts"
+    ]
+  }
+}
