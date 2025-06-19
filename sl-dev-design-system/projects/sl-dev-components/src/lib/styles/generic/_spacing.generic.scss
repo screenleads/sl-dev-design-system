@@ -1,27 +1,27 @@
 @use '../tools' as tools;
 
 :root {
-	--sca-spacing-0: #{tools.rem(2)};
-	--sca-spacing-01: #{tools.rem(4)};
-	--sca-spacing-02: #{tools.rem(8)};
-	--sca-spacing-03: #{tools.rem(16)};
-	--sca-spacing-04: #{tools.rem(24)};
-	--sca-spacing-05: #{tools.rem(32)};
-	--sca-spacing-06: #{tools.rem(40)};
-	--sca-spacing-07: #{tools.rem(48)};
-	--sca-spacing-10: #{tools.rem(80)};
-	--sca-spacing-11: #{tools.rem(106)};
-	--sca-spacing-12: #{tools.rem(120)};
+	--sl-spacing-0: #{tools.rem(2)};
+	--sl-spacing-01: #{tools.rem(4)};
+	--sl-spacing-02: #{tools.rem(8)};
+	--sl-spacing-03: #{tools.rem(16)};
+	--sl-spacing-04: #{tools.rem(24)};
+	--sl-spacing-05: #{tools.rem(32)};
+	--sl-spacing-06: #{tools.rem(40)};
+	--sl-spacing-07: #{tools.rem(48)};
+	--sl-spacing-10: #{tools.rem(80)};
+	--sl-spacing-11: #{tools.rem(106)};
+	--sl-spacing-12: #{tools.rem(120)};
 
-	--sca-spacing-0-em: #{tools.em(2)};
-	--sca-spacing-01-em: #{tools.em(4)};
-	--sca-spacing-02-em: #{tools.em(8)};
-	--sca-spacing-03-em: #{tools.em(16)};
-	--sca-spacing-04-em: #{tools.em(24)};
-	--sca-spacing-05-em: #{tools.em(32)};
-	--sca-spacing-06-em: #{tools.em(40)};
-	--sca-spacing-07-em: #{tools.em(48)};
-	--sca-spacing-10-em: #{tools.em(80)};
-	--sca-spacing-11-em: #{tools.em(106)};
-	--sca-spacing-12-em: #{tools.em(120)};
+	--sl-spacing-0-em: #{tools.em(2)};
+	--sl-spacing-01-em: #{tools.em(4)};
+	--sl-spacing-02-em: #{tools.em(8)};
+	--sl-spacing-03-em: #{tools.em(16)};
+	--sl-spacing-04-em: #{tools.em(24)};
+	--sl-spacing-05-em: #{tools.em(32)};
+	--sl-spacing-06-em: #{tools.em(40)};
+	--sl-spacing-07-em: #{tools.em(48)};
+	--sl-spacing-10-em: #{tools.em(80)};
+	--sl-spacing-11-em: #{tools.em(106)};
+	--sl-spacing-12-em: #{tools.em(120)};
 }

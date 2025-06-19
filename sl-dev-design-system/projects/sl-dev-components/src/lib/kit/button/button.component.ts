@@ -13,12 +13,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 /**
  * Tamaños disponibles para el botón.
  */
-export type ScaButtonSize = 'small' | 'medium';
+export type SlButtonSize = 'small' | 'medium';
 
 /**
  * Variantes disponibles para el botón
  */
-export type ScaButtonVariant = 'primary' | 'border';
+export type SlButtonVariant = 'primary' | 'border';
 
 /**
  * Componente botón. Es posible utilizarlo con la etiqueta <a> para crear un enlace con apariencia de botón.
@@ -33,12 +33,12 @@ export type ScaButtonVariant = 'primary' | 'border';
  * ```ts
  * @Component({
  *   standalone: true,
- *   imports: [ScaButtonComponent],
+ *   imports: [SlButtonComponent],
  *   template: `
- *     <button sca-button>A button</button>
- *     <button sca-button variant="primary" size="small">A small primary button</button>
+ *     <button sl-button>A button</button>
+ *     <button sl-button variant="primary" size="small">A small primary button</button>
  *     <!-- Also can be used with &lt;a> -->
- *     <a sca-button>A link with the appearance of a button</a>
+ *     <a sl-button>A link with the appearance of a button</a>
  *   `,
  * })
  * export class Component {}
@@ -66,7 +66,7 @@ export type ScaButtonVariant = 'primary' | 'border';
  */
 @Component({
 	// eslint-disable-next-line @angular-eslint/component-selector
-	selector: 'button[sca-button],a[sca-button]',
+	selector: 'button[sl-button],a[sl-button]',
 	standalone: true,
 	imports: [],
 	templateUrl: './button.component.html',
@@ -82,15 +82,15 @@ export type ScaButtonVariant = 'primary' | 'border';
 	host: {
 		'[attr.disabled]': 'disabled ? true : null',
 		'[attr.aria-disabled]': 'disabled ? true : null',
-		'[class.sca-button--disabled]': 'disabled',
-		'[class.sca-button--small]': 'size === "small"',
-		'[class.sca-button--medium]': 'size === "medium"',
-		'[class.sca-button--primary]': 'variant === "primary"',
-		'[class.sca-button--border]': 'variant === "border"',
-		'[class.sca-button]': 'true',
+		'[class.sl-button--disabled]': 'disabled',
+		'[class.sl-button--small]': 'size === "small"',
+		'[class.sl-button--medium]': 'size === "medium"',
+		'[class.sl-button--primary]': 'variant === "primary"',
+		'[class.sl-button--border]': 'variant === "border"',
+		'[class.sl-button]': 'true',
 	},
 })
-export class ScaButtonComponent {
+export class SlButtonComponent {
 	/**
 	 * El tiempo mínimo en milisegundos para considerar una pulsación larga.
 	 *
@@ -112,14 +112,14 @@ export class ScaButtonComponent {
 	 * @default 'primary'
 	 */
 	@Input()
-	variant: ScaButtonVariant = 'primary';
+	variant: SlButtonVariant = 'primary';
 
 	/**
 	 * El tamaño del botón.
 	 * @default 'medium'
 	 */
 	@Input()
-	size: ScaButtonSize = 'medium';
+	size: SlButtonSize = 'medium';
 
 	/**
 	 * Se activa cuando se hace clic en el botón durante una pulsación larga.
@@ -217,7 +217,7 @@ export class ScaButtonComponent {
 					const diff = endTime - startTime;
 					// ahora vamos a comprobar si el tiempo entre el mouse hacia abajo y hacia arriba es mayor a 1 segundo
 					// si la diferencia es demasiado pequeña, el evento es un clic normal
-					return diff >= ScaButtonComponent.LONG_PRESS_MIN;
+					return diff >= SlButtonComponent.LONG_PRESS_MIN;
 				}),
 				//filtrar los eventos que no son largos click
 				filter(Boolean),

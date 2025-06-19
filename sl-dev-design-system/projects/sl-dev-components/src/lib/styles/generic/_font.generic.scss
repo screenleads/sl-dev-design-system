@@ -3,130 +3,130 @@
 
 :root {
 	// primary font
-	--sca-font-primary-font-family: 'Lexend Deca', sans-serif;
+	--sl-font-primary-font-family: 'Lexend Deca', sans-serif;
 
 	// secondary font
-	--sca-font-secondary-font-family: 'Heebo', sans-serif;
-	--sca-font-secondary-font-bold: 700;
-	--sca-font-line-height: 1.375em;
+	--sl-font-secondary-font-family: 'Heebo', sans-serif;
+	--sl-font-secondary-font-bold: 700;
+	--sl-font-line-height: 1.375em;
 
 	// display-m
-	--sca-font-display-m-extra-large-font-size: #{tools.rem(63)};
-	--sca-font-display-m-extra-large: 400 var(--sca-font-display-m-extra-large-font-size) / 1.375em var(--sca-font-primary-font-family);
+	--sl-font-display-m-extra-large-font-size: #{tools.rem(63)};
+	--sl-font-display-m-extra-large: 400 var(--sl-font-display-m-extra-large-font-size) / 1.375em var(--sl-font-primary-font-family);
 
-	--sca-font-display-m-large-font-size: #{tools.rem(55)};
-	--sca-font-display-m-large: 400 var(--sca-font-display-m-large-font-size) / 1.375em var(--sca-font-primary-font-family);
+	--sl-font-display-m-large-font-size: #{tools.rem(55)};
+	--sl-font-display-m-large: 400 var(--sl-font-display-m-large-font-size) / 1.375em var(--sl-font-primary-font-family);
 
-	--sca-font-display-m-medium-font-size: #{tools.rem(43)};
-	--sca-font-display-m-medium: 400 var(--sca-font-display-m-medium-font-size) / 1.375em var(--sca-font-primary-font-family);
+	--sl-font-display-m-medium-font-size: #{tools.rem(43)};
+	--sl-font-display-m-medium: 400 var(--sl-font-display-m-medium-font-size) / 1.375em var(--sl-font-primary-font-family);
 
-	--sca-font-display-m-small-font-size: #{tools.rem(31)};
-	--sca-font-display-m-small: 400 var(--sca-font-display-m-small-font-size) / 1.375em var(--sca-font-primary-font-family);
+	--sl-font-display-m-small-font-size: #{tools.rem(31)};
+	--sl-font-display-m-small: 400 var(--sl-font-display-m-small-font-size) / 1.375em var(--sl-font-primary-font-family);
 
 	// display-s
-	--sca-font-display-s-extra-large-font-size: #{tools.rem(55)};
-	--sca-font-display-s-extra-large: 400 var(--sca-font-display-s-extra-large-font-size) / 1.14em var(--sca-font-primary-font-family);
+	--sl-font-display-s-extra-large-font-size: #{tools.rem(55)};
+	--sl-font-display-s-extra-large: 400 var(--sl-font-display-s-extra-large-font-size) / 1.14em var(--sl-font-primary-font-family);
 
-	--sca-font-display-s-large-font-size: #{tools.rem(43)};
-	--sca-font-display-s-large: 400 var(--sca-font-display-s-large-font-size) / 1.14em var(--sca-font-primary-font-family);
+	--sl-font-display-s-large-font-size: #{tools.rem(43)};
+	--sl-font-display-s-large: 400 var(--sl-font-display-s-large-font-size) / 1.14em var(--sl-font-primary-font-family);
 
-	--sca-font-display-s-medium-font-size: #{tools.rem(39)};
-	--sca-font-display-s-medium: 400 var(--sca-font-display-s-medium-font-size) / 1.14em var(--sca-font-primary-font-family);
+	--sl-font-display-s-medium-font-size: #{tools.rem(39)};
+	--sl-font-display-s-medium: 400 var(--sl-font-display-s-medium-font-size) / 1.14em var(--sl-font-primary-font-family);
 
-	--sca-font-display-s-small-font-size: #{tools.rem(28)};
-	--sca-font-display-s-small: 400 var(--sca-font-display-s-small-font-size) / 1.14em var(--sca-font-primary-font-family);
+	--sl-font-display-s-small-font-size: #{tools.rem(28)};
+	--sl-font-display-s-small: 400 var(--sl-font-display-s-small-font-size) / 1.14em var(--sl-font-primary-font-family);
 
 	// primary headline-l
-	--sca-font-primary-headline-l-extra-large-font-size: #{tools.rem(39)};
-	--sca-font-primary-headline-l-extra-large: 400 var(--sca-font-primary-headline-l-extra-large-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-l-extra-large-font-size: #{tools.rem(39)};
+	--sl-font-primary-headline-l-extra-large: 400 var(--sl-font-primary-headline-l-extra-large-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-l-large-font-size: #{tools.rem(31)};
-	--sca-font-primary-headline-l-large: 400 var(--sca-font-primary-headline-l-large-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-l-large-font-size: #{tools.rem(31)};
+	--sl-font-primary-headline-l-large: 400 var(--sl-font-primary-headline-l-large-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-l-medium-font-size: #{tools.rem(28)};
-	--sca-font-primary-headline-l-medium: 400 var(--sca-font-primary-headline-l-medium-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-l-medium-font-size: #{tools.rem(28)};
+	--sl-font-primary-headline-l-medium: 400 var(--sl-font-primary-headline-l-medium-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-l-small-font-size: #{tools.rem(24)};
-	--sca-font-primary-headline-l-small: 400 var(--sca-font-primary-headline-l-small-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-l-small-font-size: #{tools.rem(24)};
+	--sl-font-primary-headline-l-small: 400 var(--sl-font-primary-headline-l-small-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
 	// primary headline-m
-	--sca-font-primary-headline-m-extra-large-font-size: #{tools.rem(24)};
-	--sca-font-primary-headline-m-extra-large: 400 var(--sca-font-primary-headline-m-extra-large-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-m-extra-large-font-size: #{tools.rem(24)};
+	--sl-font-primary-headline-m-extra-large: 400 var(--sl-font-primary-headline-m-extra-large-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-m-large-font-size: #{tools.rem(24)};
-	--sca-font-primary-headline-m-large: 400 var(--sca-font-primary-headline-m-large-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-m-large-font-size: #{tools.rem(24)};
+	--sl-font-primary-headline-m-large: 400 var(--sl-font-primary-headline-m-large-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-m-medium-font-size: #{tools.rem(24)};
-	--sca-font-primary-headline-m-medium: 400 var(--sca-font-primary-headline-m-medium-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-m-medium-font-size: #{tools.rem(24)};
+	--sl-font-primary-headline-m-medium: 400 var(--sl-font-primary-headline-m-medium-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-m-small-font-size: #{tools.rem(21)};
-	--sca-font-primary-headline-m-small: 400 var(--sca-font-primary-headline-m-small-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-m-small-font-size: #{tools.rem(21)};
+	--sl-font-primary-headline-m-small: 400 var(--sl-font-primary-headline-m-small-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
 	// primary headline-s
-	--sca-font-primary-headline-s-extra-large-font-size: #{tools.rem(18)};
-	--sca-font-primary-headline-s-extra-large: 400 var(--sca-font-primary-headline-s-extra-large-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-s-extra-large-font-size: #{tools.rem(18)};
+	--sl-font-primary-headline-s-extra-large: 400 var(--sl-font-primary-headline-s-extra-large-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-s-large-font-size: #{tools.rem(18)};
-	--sca-font-primary-headline-s-large: 400 var(--sca-font-primary-headline-s-large-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-s-large-font-size: #{tools.rem(18)};
+	--sl-font-primary-headline-s-large: 400 var(--sl-font-primary-headline-s-large-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-s-medium-font-size: #{tools.rem(18)};
-	--sca-font-primary-headline-s-medium: 400 var(--sca-font-primary-headline-s-medium-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-s-medium-font-size: #{tools.rem(18)};
+	--sl-font-primary-headline-s-medium: 400 var(--sl-font-primary-headline-s-medium-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-s-small-font-size: #{tools.rem(16)};
-	--sca-font-primary-headline-s-small: 400 var(--sca-font-primary-headline-s-small-font-size) / 1.1612em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-s-small-font-size: #{tools.rem(16)};
+	--sl-font-primary-headline-s-small: 400 var(--sl-font-primary-headline-s-small-font-size) / 1.1612em var(--sl-font-primary-font-family);
 
-	--sca-font-primary-headline-xs-font-size: #{tools.rem(12)};
-	--sca-font-primary-headline-xs: 400 var(--sca-font-primary-headline-xs-font-size) / 1.375em var(--sca-font-primary-font-family);
+	--sl-font-primary-headline-xs-font-size: #{tools.rem(12)};
+	--sl-font-primary-headline-xs: 400 var(--sl-font-primary-headline-xs-font-size) / 1.375em var(--sl-font-primary-font-family);
 
 	// secondary headline-l-regular
-	--sca-secondary-headline-l-extra-large-font-size: #{tools.rem(25)};
-	--sca-secondary-headline-l-extra-large: 400 var(--sca-secondary-headline-l-extra-large-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-l-extra-large-font-size: #{tools.rem(25)};
+	--sl-secondary-headline-l-extra-large: 400 var(--sl-secondary-headline-l-extra-large-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-secondary-headline-l-large-font-size: #{tools.rem(25)};
-	--sca-secondary-headline-l-large: 400 var(--sca-secondary-headline-l-large-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-l-large-font-size: #{tools.rem(25)};
+	--sl-secondary-headline-l-large: 400 var(--sl-secondary-headline-l-large-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-secondary-headline-l-medium-font-size: #{tools.rem(20)};
-	--sca-secondary-headline-l-medium: 400 var(--sca-secondary-headline-l-medium-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-l-medium-font-size: #{tools.rem(20)};
+	--sl-secondary-headline-l-medium: 400 var(--sl-secondary-headline-l-medium-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-secondary-headline-l-small-font-size: #{tools.rem(20)};
-	--sca-secondary-headline-l-small: 400 var(--sca-secondary-headline-l-small-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-l-small-font-size: #{tools.rem(20)};
+	--sl-secondary-headline-l-small: 400 var(--sl-secondary-headline-l-small-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
 	// secondary headline-m
-	--sca-secondary-headline-m-extra-large-font-size: #{tools.rem(20)};
-	--sca-secondary-headline-m-extra-large: 400 var(--sca-secondary-headline-m-extra-large-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-m-extra-large-font-size: #{tools.rem(20)};
+	--sl-secondary-headline-m-extra-large: 400 var(--sl-secondary-headline-m-extra-large-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-secondary-headline-m-large-font-size: #{tools.rem(20)};
-	--sca-secondary-headline-m-large: 400 var(--sca-secondary-headline-m-large-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-m-large-font-size: #{tools.rem(20)};
+	--sl-secondary-headline-m-large: 400 var(--sl-secondary-headline-m-large-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-secondary-headline-m-medium-font-size: #{tools.rem(18)};
-	--sca-secondary-headline-m-medium: 400 var(--sca-secondary-headline-m-medium-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-m-medium-font-size: #{tools.rem(18)};
+	--sl-secondary-headline-m-medium: 400 var(--sl-secondary-headline-m-medium-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-secondary-headline-m-small-font-size: #{tools.rem(18)};
-	--sca-secondary-headline-m-small: 400 var(--sca-secondary-headline-m-small-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-secondary-headline-m-small-font-size: #{tools.rem(18)};
+	--sl-secondary-headline-m-small: 400 var(--sl-secondary-headline-m-small-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
 	// font size configuration per body
-	--sca-font-body-m-font-size: #{tools.rem(16)};
-	--sca-font-body-m: 400 var(--sca-font-body-m-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-body-m-font-size: #{tools.rem(16)};
+	--sl-font-body-m: 400 var(--sl-font-body-m-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-font-body-s-font-size: #{tools.rem(14)};
-	--sca-font-body-s: 400 var(--sca-font-body-s-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-body-s-font-size: #{tools.rem(14)};
+	--sl-font-body-s: 400 var(--sl-font-body-s-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-font-body-xs-font-size: #{tools.rem(12)};
-	--sca-font-body-xs: 400 var(--sca-font-body-xs-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-body-xs-font-size: #{tools.rem(12)};
+	--sl-font-body-xs: 400 var(--sl-font-body-xs-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-font-body-xxs-font-size: #{tools.rem(10)};
-	--sca-font-body-xxs: 400 var(--sca-font-body-xxs-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-body-xxs-font-size: #{tools.rem(10)};
+	--sl-font-body-xxs: 400 var(--sl-font-body-xxs-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-font-tag-font-size: #{tools.rem(11.008)};
-	--sca-font-tag: 500 var(--sca-font-tag-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-tag-font-size: #{tools.rem(11.008)};
+	--sl-font-tag: 500 var(--sl-font-tag-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
 	// font size configuration per link
-	--sca-font-link-m-font-size: #{tools.rem(16)};
-	--sca-font-link-m: 400 var(--sca-font-link-m-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-link-m-font-size: #{tools.rem(16)};
+	--sl-font-link-m: 400 var(--sl-font-link-m-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-font-link-s-font-size: #{tools.rem(14)};
-	--sca-font-link-s: 400 var(--sca-font-link-s-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-link-s-font-size: #{tools.rem(14)};
+	--sl-font-link-s: 400 var(--sl-font-link-s-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
-	--sca-font-link-xs-font-size: #{tools.rem(12)};
-	--sca-font-link-xs: 400 var(--sca-font-link-xs-font-size) / 1.375em var(--sca-font-secondary-font-family);
+	--sl-font-link-xs-font-size: #{tools.rem(12)};
+	--sl-font-link-xs: 400 var(--sl-font-link-xs-font-size) / 1.375em var(--sl-font-secondary-font-family);
 }
