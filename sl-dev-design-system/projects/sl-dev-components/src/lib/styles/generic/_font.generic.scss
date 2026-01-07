@@ -3,12 +3,29 @@
 
 :root {
 	// primary font
-	--sl-font-primary-font-family: 'Lexend Deca', sans-serif;
+	--sl-font-primary-font-family: 'Heebo', sans-serif;
 
 	// secondary font
-	--sl-font-secondary-font-family: 'Heebo', sans-serif;
+	--sl-font-secondary-font-family: 'Lexend Deca', sans-serif;
 	--sl-font-secondary-font-bold: 700;
 	--sl-font-line-height: 1.375em;
+
+
+	--sl-font-display-xxl-extra-large-font-size: #{tools.rem(120)};
+	--sl-font-display-xl-extra-large-font-size: #{tools.rem(100)};
+
+	// display-l
+	--sl-font-display-l-extra-large-font-size: #{tools.rem(80)};
+	--sl-font-display-l-extra-large: 400 var(--sl-font-display-m-extra-large-font-size) / 1.835em var(--sl-font-primary-font-family);
+
+	--sl-font-display-l-large-font-size: #{tools.rem(72)};
+	--sl-font-display-l-large: 400 var(--sl-font-display-m-large-font-size) / 1.835em var(--sl-font-primary-font-family);
+
+	--sl-font-display-l-medium-font-size: #{tools.rem(60)};
+	--sl-font-display-l-medium: 400 var(--sl-font-display-m-medium-font-size) / 1.835em var(--sl-font-primary-font-family);
+
+	--sl-font-display-l-small-font-size: #{tools.rem(48)};
+	--sl-font-display-l-small: 400 var(--sl-font-display-m-small-font-size) / 1.835em var(--sl-font-primary-font-family);
 
 	// display-m
 	--sl-font-display-m-extra-large-font-size: #{tools.rem(63)};
@@ -23,6 +40,7 @@
 	--sl-font-display-m-small-font-size: #{tools.rem(31)};
 	--sl-font-display-m-small: 400 var(--sl-font-display-m-small-font-size) / 1.375em var(--sl-font-primary-font-family);
 
+
 	// display-s
 	--sl-font-display-s-extra-large-font-size: #{tools.rem(55)};
 	--sl-font-display-s-extra-large: 400 var(--sl-font-display-s-extra-large-font-size) / 1.14em var(--sl-font-primary-font-family);
@@ -35,6 +53,8 @@
 
 	--sl-font-display-s-small-font-size: #{tools.rem(28)};
 	--sl-font-display-s-small: 400 var(--sl-font-display-s-small-font-size) / 1.14em var(--sl-font-primary-font-family);
+
+
 
 	// primary headline-l
 	--sl-font-primary-headline-l-extra-large-font-size: #{tools.rem(39)};
@@ -105,6 +125,22 @@
 	--sl-secondary-headline-m-small: 400 var(--sl-secondary-headline-m-small-font-size) / 1.375em var(--sl-font-secondary-font-family);
 
 	// font size configuration per body
+
+	--sl-font-body-xxl-font-size: #{tools.rem(80)};
+	--sl-font-body-xxl: 400 var(--sl-font-body-xxl-font-size) / 1.375em var(--sl-font-secondary-font-family);
+
+	--sl-font-body-xml-font-size: #{tools.rem(60)};
+	--sl-font-body-xsl-font-size: #{tools.rem(50)};
+	--sl-font-body-xl-font-size: #{tools.rem(40)};
+	--sl-font-body-xl: 400 var(--sl-font-body-xl-font-size) / 1.375em var(--sl-font-secondary-font-family);
+
+	--sl-font-body-ll-font-size: #{tools.rem(30)};
+	--sl-font-body-lm-font-size: #{tools.rem(22)};
+
+
+	--sl-font-body-l-font-size: #{tools.rem(18)};
+	--sl-font-body-l: 400 var(--sl-font-body-l-font-size) / 1.375em var(--sl-font-secondary-font-family);
+
 	--sl-font-body-m-font-size: #{tools.rem(16)};
 	--sl-font-body-m: 400 var(--sl-font-body-m-font-size) / 1.375em var(--sl-font-secondary-font-family);
 

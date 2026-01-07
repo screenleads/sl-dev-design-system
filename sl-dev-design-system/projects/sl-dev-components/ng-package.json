@@ -12,6 +12,11 @@
       "input": "src/lib/fonts",
       "glob": "**/*",
       "output": "fonts"
+    },
+    {
+      "input": "src/assets",
+      "glob": "**/*",
+      "output": "assets"
     }
   ],
   "lib": {

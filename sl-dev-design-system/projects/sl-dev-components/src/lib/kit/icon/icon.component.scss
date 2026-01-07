@@ -1,0 +1,156 @@
+@use '../../styles/common' as common;
+@use '../../styles/tools' as tools;
+
+sl-icon {
+	--sl-icon-font-family: 'Material Symbols Outlined';
+	--sl-icon-shape-padding: var(--sl-spacing-01);
+
+	position: relative;
+	display: inline-block;
+	inline-size: 1em;
+	font-size: common.rem(24);
+	block-size: 1em;
+	flex-shrink: 0;
+	vertical-align: middle;
+	box-sizing: border-box;
+
+	@include tools.tvLarge {
+		inline-size: var(--sl-font-body-xxl-font-size);
+		block-size: var(--sl-font-body-xxl-font-size);
+	}
+
+
+	&::before {
+		content: var(--sl-icon-prefix, none);
+		display: block;
+		inline-size: 1em;
+		block-size: 1em;
+		flex-shrink: 0;
+		font-family: var(--sl-icon-font-family);
+		font-weight: normal;
+		font-style: normal;
+		line-height: 1;
+		letter-spacing: normal;
+		text-transform: none;
+		vertical-align: middle;
+		white-space: nowrap;
+		word-wrap: normal;
+		direction: ltr;
+		-webkit-font-smoothing: antialiased;
+
+		@include tools.tvLarge {
+
+			font-size: var(--sl-font-body-xxl-font-size);
+			font-weight: bold;
+			line-height: var(--sl-font-body-xxl-font-size);
+			inline-size: var(--sl-font-body-xxl-font-size);
+			block-size: var(--sl-font-body-xxl-font-size);
+
+		}
+
+		@include tools.extraLarge {
+			font-size: common.rem(24);
+
+		}
+
+		@include tools.large {
+			font-size: common.rem(24);
+
+
+		}
+
+		@include tools.medium {
+			font-size: common.rem(24);
+
+
+		}
+
+		@include tools.small {
+			font-size: common.rem(24);
+
+
+		}
+	}
+
+	// variant
+	&.sl-icon--variant-dark {
+		color: var(--sl-neutrals-icon-default);
+	}
+
+	&.sl-icon--variant-weak {
+		color: var(--sl-neutrals-icon-weak);
+	}
+
+	&.sl-icon--variant-dark-green {
+		color: var(--sl-color-success-100);
+	}
+
+	&.sl-icon--variant-light-green {
+		color: var(--sl-color-success-10);
+	}
+
+	&.sl-icon--variant-link {
+		color: var(--sl-primary01-icon-link);
+	}
+
+	&.sl-icon--variant-blue {
+		color: var(--sl-primary01-icon-link);
+	}
+
+	&.sl-icon--variant-gray {
+		color: var(--sl-neutrals-icon-gray);
+	}
+
+	&.sl-icon--variant-error {
+		color: var(--sl-danger-icon-default);
+	}
+
+	// shape
+	&.sl-icon--circle {
+		padding: var(--sl-icon-shape-padding);
+		overflow: hidden;
+		box-sizing: content-box;
+		border-radius: 50%;
+
+		// shape variant
+		&.sl-icon--variant-dark {
+			background-color: var(--sl-neutrals-background-dark);
+			color: var(--sl-color-primary01-20);
+		}
+
+		&.sl-icon--variant-weak {
+			background-color: var(--sl-neutrals-background-weak);
+			color: var(--sl-color-neutrals-text-default);
+		}
+
+		&.sl-icon--variant-dark-green {
+			color: var(--sl-color-success-10);
+			background-color: var(--sl-color-success-100);
+		}
+
+		&.sl-icon--variant-light-green {
+			color: var(--sl-color-success-100);
+			background-color: var(--sl-color-success-10);
+		}
+
+		&.sl-icon--variant-link {
+			color: var(--sl-color-primary01-20);
+			background-color: var(--sl-primary01-background-default);
+		}
+
+		&.sl-icon--variant-blue {
+			color: var(--sl-color-primary01-20);
+			background-color: var(--sl-primary01-background-default);
+		}
+
+		&.sl-icon--variant-gray {
+			color: var(--sl-color-primary01-20);
+			background-color: var(--sl-neutrals-background-medium);
+		}
+
+		&.sl-icon--variant-error {
+			color: var(--sl-danger-icon-default);
+			background-color: var(--sl-color-error-10);
+		}
+	}
+}

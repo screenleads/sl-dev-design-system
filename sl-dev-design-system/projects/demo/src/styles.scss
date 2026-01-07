@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../../sl-dev-components/src/lib/styles/styles.scss';
+@import '../../sl-dev-components/src/lib/kit/button/button.component.scss';
+
+// NOTA: Lee el apartado de Tipografías
+@import '../../sl-dev-components/src/lib/fonts/fonts.scss';
+
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
+
+
+.content {
+    padding: 10rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--sl-color-neutrals-100);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}

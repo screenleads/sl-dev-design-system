@@ -1,21 +1,72 @@
 @use '../../styles/common' as common;
+@use '../../styles/tools' as tools;
 
 .sl-button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: var(--sl-spacing-03) var(--sl-spacing-05);
-	min-height: common.rem(56);
+	// Mobile first: tamaño base
+	padding: var(--sl-spacing-02) var(--sl-spacing-04);
+	min-height: common.rem(44);
 	cursor: pointer;
 	font-family: var(--sl-font-secondary-font-family);
-	font-size: 1rem;
-	font-weight: 700;
+	font: var(--sl-font-body-m);
+	font-weight: 800;
+	font-style: normal;
+	line-height: normal;
 	border: 0;
-
+	border-radius: 6vw;
 	// for the animation
 	position: relative;
 	overflow: hidden;
 	transition: color 0.3s;
+
+	// Progresión lógica de tamaños
+	@include tools.sm {
+		padding: var(--sl-spacing-02) var(--sl-spacing-05);
+		min-height: common.rem(46);
+	}
+
+	@include tools.md {
+		padding: var(--sl-spacing-03) var(--sl-spacing-05);
+		min-height: common.rem(48);
+	}
+
+	@include tools.lg {
+		font: var(--sl-font-body-l);
+		font-weight: 800;
+		padding: var(--sl-spacing-03) var(--sl-spacing-06);
+		min-height: common.rem(50);
+	}
+
+	@include tools.xl {
+		font: var(--sl-font-body-l);
+		font-weight: 800;
+		padding: var(--sl-spacing-03) var(--sl-spacing-06);
+		min-height: common.rem(52);
+	}
+
+	@include tools.xxl {
+		font: var(--sl-font-body-xl);
+		font-weight: 800;
+		padding: var(--sl-spacing-04) var(--sl-spacing-07);
+		min-height: common.rem(56);
+	}
+
+	@include tools.tv {
+		font: var(--sl-font-body-xxl);
+		font-weight: 800;
+		padding: var(--sl-spacing-05) var(--sl-spacing-08);
+		min-height: common.rem(64);
+	}
+
+	@include tools.tv-4k {
+		font: var(--sl-font-body-xxl);
+		font-size: calc(var(--sl-font-body-xxl-font-size) * 1.5);
+		font-weight: 800;
+		padding: var(--sl-spacing-08) var(--sl-spacing-10);
+		min-height: common.rem(80);
+	}
 
 	.sl-button__content {
 		display: flex;
@@ -25,10 +76,18 @@
 		-webkit-touch-callout: none;
 		-webkit-user-select: none;
 		user-select: none;
+
+		@include tools.tv {
+			gap: var(--sl-spacing-03);
+		}
+
+		@include tools.tv-4k {
+			gap: var(--sl-spacing-04);
+		}
 	}
 
 	// position children on top of the animation
-	& > * {
+	&>* {
 		z-index: 1;
 	}
 
@@ -42,7 +101,6 @@
 
 		// the animation should be a circle, so keep aspect ratio
 		aspect-ratio: 1 / 1;
-		background-color: var(--sl-primary-border-hover);
 		border-radius: 50%;
 		transition: transform 0.2s;
 		transform: scale(0);
@@ -62,27 +120,34 @@
 
 		// variant primary
 		&.sl-button--primary {
-			color: var(--sl-color-neutrals-90);
-			background-color: var(--sl-color-primary-100);
+			color: var(--sl-color-neutrals-100);
+			background-color: var(--sl-primary01-background-default);
 
 			&:focus-visible {
 				outline: 0;
-				box-shadow: 0 0 0 4px var(--sl-primary-background-weak);
+				box-shadow: 0 0 0 4px var(--sl-primary01-background-weak);
 			}
-			
+
 			&:hover {
-				background-color: var(--sl-color-primary-50);
+				background-color: var(--sl-color-neutrals-0);
 			}
+
+			&:active {
+				background-color: var(--sl-color-neutrals-0);
+			}
+
 		}
 
 		// variant border
 		&.sl-button--border {
-			color: var(--sl-color-neutrals-0);
-			background-color: var(--sl-neutrals-background-extra-weak);
-			box-shadow: inset 0 0 0 0.125rem var(--sl-color-neutrals-0);
+			color: var(--sl-primary02-background-default);
+			background-color: transparent;
+			box-shadow: inset 0 0 0 0.125rem var(--sl-primary02-background-default);
 
 			&:hover {
-				color: var(--sl-color-primary-100);
+				color: var(--sl-primary01-background-default);
+				background-color: transparent;
+				box-shadow: inset 0 0 0 0.125rem var(--sl-primary01-background-default);
 			}
 		}
 	}

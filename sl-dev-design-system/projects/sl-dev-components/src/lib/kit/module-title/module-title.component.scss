@@ -1,0 +1,114 @@
+@use '../../styles/tools/responsive.tools' as responsive;
+@use '../../styles/common' as common;
+@use '../../styles/tools' as tools;
+
+.sl-module-title {
+	display: flex;
+	flex-direction: column;
+	padding: var(--sl-spacing-03) 0;
+
+	@include responsive.small {
+		padding: var(--sl-spacing-02) 0;
+
+		&--centered {
+			text-align: center;
+		}
+	}
+
+	@include responsive.fromMedium {
+		&--centered {
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	@include responsive.large {
+		padding: var(--sl-spacing-05) 0;
+	}
+
+	@include responsive.extraLarge {
+		padding: var(--sl-spacing-05) 0;
+	}
+
+	@include responsive.tvLarge {
+		padding: var(--sl-spacing-10) 0;
+	}
+
+	[slModuleTitlePre] {
+		font: var(--sl-font-body-s);
+		color: var(--sl-color-neutrals-10);
+
+		@include responsive.tvLarge {
+			font-size: var(--sl-font-display-l-extra-large-font-size);
+		}
+
+		@include responsive.extraLarge {
+			font-size: var(--sl-font-body-l-font-size);
+		}
+
+		@include responsive.large {
+			font-size: var(--sl-font-body-l-font-size);
+		}
+
+		@include responsive.medium {
+			font-size: var(--sl-font-body-m-font-size);
+		}
+
+		@include responsive.small {
+			font-size: var(--sl-font-body-m-font-size);
+		}
+
+	}
+
+	>* {
+		font: var(--sl-secondary-headline-l-extra-large);
+		color: var(--sl-color-neutrals-10);
+		font-weight: bold;
+		margin: 0 0;
+
+		@include responsive.tvLarge {
+			font-size: var(--sl-font-display-xxl-extra-large-font-size);
+		}
+
+		@include responsive.extraLarge {
+			font-size: var(--sl-font-body-xsl-font-size);
+		}
+
+		@include responsive.large {
+			font-size: var(--sl-font-body-xsl-font-size);
+		}
+
+		@include responsive.medium {
+			font-size: var(--sl-font-body-xl-font-size);
+		}
+
+		@include responsive.small {
+			font-size: var(--sl-font-body-ll-font-size);
+		}
+	}
+
+	[slModuleTitlePost] {
+		font: var(--sl-font-body-s);
+		color: var(--sl-color-neutrals-10);
+
+		@include responsive.tvLarge {
+			font-size: var(--sl-font-display-l-extra-large-font-size);
+		}
+
+		@include responsive.extraLarge {
+			font-size: var(--sl-font-body-l-font-size);
+		}
+
+		@include responsive.large {
+			font-size: var(--sl-font-body-l-font-size);
+		}
+
+		@include responsive.medium {
+			font-size: var(--sl-font-body-m-font-size);
+		}
+
+		@include responsive.small {
+			font-size: var(--sl-font-body-m-font-size);
+		}
+	}
+}

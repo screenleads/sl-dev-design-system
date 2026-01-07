@@ -1,0 +1,5 @@
+<label class="sl-radio-button__label">
+	<input type="radio" class="sl-radio-button__input" [checked]="checked" [disabled]="disabled"
+		(change)="updateValue($event)" />
+	<ng-content></ng-content>
+</label>

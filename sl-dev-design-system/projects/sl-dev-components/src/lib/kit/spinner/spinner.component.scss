@@ -1,0 +1,80 @@
+@use '../../styles/common' as common;
+@use '../../styles/tools' as tools;
+
+.sl-spinner {
+	display: inline-block;
+	
+	.sl-spinner__svg {
+		animation: sl-spinner-rotate 2s linear infinite;
+		width: common.rem(32);  // medium por defecto
+		height: common.rem(32);
+	}
+
+	.sl-spinner__circle {
+		stroke: var(--sl-primary01-background-default);
+		stroke-linecap: round;
+		animation: sl-spinner-dash 1.5s ease-in-out infinite;
+	}
+
+	// Tamaños
+	&.sl-spinner--small .sl-spinner__svg {
+		width: common.rem(20);
+		height: common.rem(20);
+	}
+
+	&.sl-spinner--medium .sl-spinner__svg {
+		width: common.rem(32);
+		height: common.rem(32);
+	}
+
+	&.sl-spinner--large .sl-spinner__svg {
+		width: common.rem(48);
+		height: common.rem(48);
+
+		@include tools.tv {
+			width: common.rem(64);
+			height: common.rem(64);
+		}
+
+		@include tools.tv-4k {
+			width: common.rem(96);
+			height: common.rem(96);
+		}
+	}
+
+	// Variantes
+	&.sl-spinner--primary .sl-spinner__circle {
+		stroke: var(--sl-primary01-background-default);
+	}
+
+	&.sl-spinner--secondary .sl-spinner__circle {
+		stroke: var(--sl-primary02-background-default);
+	}
+
+	&.sl-spinner--white .sl-spinner__circle {
+		stroke: var(--sl-color-neutrals-100);
+	}
+}
+
+// Animación de rotación
+@keyframes sl-spinner-rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+// Animación del trazo circular
+@keyframes sl-spinner-dash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
+	}
+}

@@ -1,0 +1,15 @@
+<label class="sl-toggle__wrapper">
+	<input
+		type="checkbox"
+		class="sl-toggle__input"
+		[checked]="checked"
+		[disabled]="disabled"
+		(click)="$event.stopPropagation()"
+	/>
+	<span class="sl-toggle__track">
+		<span class="sl-toggle__thumb"></span>
+	</span>
+	<span class="sl-toggle__label" *ngIf="true">
+		<ng-content></ng-content>
+	</span>
+</label>

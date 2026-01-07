@@ -1,0 +1,5 @@
+<label class="sl-checkbox__label">
+	<input type="checkbox" class="sl-checkbox__input" [checked]="checked" [disabled]="disabled"
+		(change)="updateValue($event)" />
+	<span><ng-content></ng-content></span>
+</label>

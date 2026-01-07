@@ -1,0 +1,22 @@
+<div class="content">
+
+    <div>
+        <sl-module-title>
+            <span slModuleTitlePre>Pre Título</span>
+            <h1>Vamos a nombrar este dispositivo</h1>
+            <span slModuleTitlePost>Post Título</span>
+        </sl-module-title>
+
+        <sl-text-field [label]="'El nombre del dispositivo'">
+            <input slNativeControl type="text" [(ngModel)]="descriptionName" />
+            <sl-icon slTextFieldEnd icon="aod"></sl-icon>
+        </sl-text-field>
+    </div>
+
+    <button sl-button variant="primary" size="medium">
+        <sl-icon icon="search"></sl-icon>
+        Guardar
+        <sl-icon icon="search"></sl-icon>
+
+    </button>
+</div>

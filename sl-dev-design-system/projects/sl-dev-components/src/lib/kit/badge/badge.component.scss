@@ -1,0 +1,126 @@
+@use '../../styles/common' as common;
+@use '../../styles/tools' as tools;
+
+.sl-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: common.rem(20);
+	height: common.rem(20);
+	padding: 0 var(--sl-spacing-01);
+	font: var(--sl-font-body-xs);
+	font-weight: 700;
+	border-radius: common.rem(10);
+	white-space: nowrap;
+
+	@include tools.md {
+		min-width: common.rem(22);
+		height: common.rem(22);
+		padding: 0 var(--sl-spacing-02);
+		font: var(--sl-font-body-s);
+	}
+
+	@include tools.tv {
+		min-width: common.rem(32);
+		height: common.rem(32);
+		padding: 0 var(--sl-spacing-03);
+		font: var(--sl-font-body-m);
+		border-radius: common.rem(16);
+	}
+
+	@include tools.tv-4k {
+		min-width: common.rem(48);
+		height: common.rem(48);
+		padding: 0 var(--sl-spacing-04);
+		font: var(--sl-font-body-l);
+		border-radius: common.rem(24);
+	}
+
+	// Variantes
+	&.sl-badge--primary {
+		background-color: var(--sl-primary01-background-default);
+		color: var(--sl-color-neutrals-100);
+	}
+
+	&.sl-badge--secondary {
+		background-color: var(--sl-primary02-background-default);
+		color: var(--sl-color-neutrals-100);
+	}
+
+	&.sl-badge--success {
+		background-color: #10b981; // green-500
+		color: var(--sl-color-neutrals-100);
+	}
+
+	&.sl-badge--error {
+		background-color: var(--sl-error-background-default);
+		color: var(--sl-color-neutrals-100);
+	}
+
+	&.sl-badge--warning {
+		background-color: #f59e0b; // amber-500
+		color: var(--sl-color-neutrals-100);
+	}
+
+	&.sl-badge--info {
+		background-color: #3b82f6; // blue-500
+		color: var(--sl-color-neutrals-100);
+	}
+
+	// Badge posicionado
+	&.sl-badge--positioned {
+		position: absolute;
+		z-index: 10;
+	}
+
+	&.sl-badge--top-right {
+		top: 0;
+		right: 0;
+		transform: translate(50%, -50%);
+	}
+
+	&.sl-badge--top-left {
+		top: 0;
+		left: 0;
+		transform: translate(-50%, -50%);
+	}
+
+	&.sl-badge--bottom-right {
+		bottom: 0;
+		right: 0;
+		transform: translate(50%, 50%);
+	}
+
+	&.sl-badge--bottom-left {
+		bottom: 0;
+		left: 0;
+		transform: translate(-50%, 50%);
+	}
+
+	// Badge dot (sin contenido)
+	&.sl-badge--dot {
+		min-width: common.rem(10);
+		width: common.rem(10);
+		height: common.rem(10);
+		padding: 0;
+		border-radius: 50%;
+
+		@include tools.md {
+			min-width: common.rem(12);
+			width: common.rem(12);
+			height: common.rem(12);
+		}
+
+		@include tools.tv {
+			min-width: common.rem(16);
+			width: common.rem(16);
+			height: common.rem(16);
+		}
+
+		@include tools.tv-4k {
+			min-width: common.rem(24);
+			width: common.rem(24);
+			height: common.rem(24);
+		}
+	}
+}

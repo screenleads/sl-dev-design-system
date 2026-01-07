@@ -1,0 +1,142 @@
+@use '../../styles/common' as common;
+@use '../../styles/tools' as tools;
+
+.sl-toggle {
+	display: inline-block;
+
+	.sl-toggle__wrapper {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--sl-spacing-02);
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.sl-toggle__input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.sl-toggle__track {
+		position: relative;
+		display: inline-block;
+		width: common.rem(44);
+		height: common.rem(24);
+		background-color: var(--sl-color-neutrals-60);
+		border-radius: common.rem(12);
+		transition: background-color 0.2s ease;
+
+		@include tools.md {
+			width: common.rem(48);
+			height: common.rem(26);
+			border-radius: common.rem(13);
+		}
+
+		@include tools.tv {
+			width: common.rem(64);
+			height: common.rem(36);
+			border-radius: common.rem(18);
+		}
+
+		@include tools.tv-4k {
+			width: common.rem(80);
+			height: common.rem(44);
+			border-radius: common.rem(22);
+		}
+	}
+
+	.sl-toggle__thumb {
+		position: absolute;
+		top: common.rem(2);
+		left: common.rem(2);
+		width: common.rem(20);
+		height: common.rem(20);
+		background-color: var(--sl-color-neutrals-100);
+		border-radius: 50%;
+		transition: transform 0.2s ease;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+		@include tools.md {
+			width: common.rem(22);
+			height: common.rem(22);
+		}
+
+		@include tools.tv {
+			top: common.rem(3);
+			left: common.rem(3);
+			width: common.rem(30);
+			height: common.rem(30);
+		}
+
+		@include tools.tv-4k {
+			top: common.rem(4);
+			left: common.rem(4);
+			width: common.rem(36);
+			height: common.rem(36);
+		}
+	}
+
+	.sl-toggle__label {
+		font: var(--sl-font-body-m);
+		color: var(--sl-color-neutrals-0);
+
+		@include tools.tv {
+			font: var(--sl-font-body-xl);
+		}
+
+		@include tools.tv-4k {
+			font: var(--sl-font-body-xxl);
+		}
+	}
+
+	// Estado checked
+	&.sl-toggle--checked {
+		.sl-toggle__track {
+			background-color: var(--sl-primary01-background-default);
+		}
+
+		.sl-toggle__thumb {
+			transform: translateX(common.rem(20));
+
+			@include tools.md {
+				transform: translateX(common.rem(22));
+			}
+
+			@include tools.tv {
+				transform: translateX(common.rem(28));
+			}
+
+			@include tools.tv-4k {
+				transform: translateX(common.rem(36));
+			}
+		}
+	}
+
+	// Estado disabled
+	&.sl-toggle--disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+
+		.sl-toggle__wrapper {
+			cursor: not-allowed;
+		}
+
+		.sl-toggle__track {
+			background-color: var(--sl-neutrals-background-disabled);
+		}
+	}
+
+	// Hover (solo si no está disabled)
+	&:not(.sl-toggle--disabled) {
+		.sl-toggle__wrapper:hover .sl-toggle__track {
+			filter: brightness(1.1);
+		}
+	}
+
+	// Focus
+	&:focus-within .sl-toggle__track {
+		outline: 2px solid var(--sl-primary01-border-active);
+		outline-offset: 2px;
+	}
+}

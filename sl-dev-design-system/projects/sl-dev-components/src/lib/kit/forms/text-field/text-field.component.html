@@ -1,0 +1,12 @@
+<div class="sl-text-field__wrapper">
+	<ng-content select="[slTextFieldStart]"></ng-content>
+	<div class="sl-text-field__control">
+		<ng-container *ngIf="label">
+			<label class="sl-label" [attr.for]="idControl()">
+				{{ label }}
+			</label>
+		</ng-container>
+		<ng-content select="input[slNativeControl],textarea[slNativeControl],select[slNativeControl]"></ng-content>
+	</div>
+	<ng-content select="[slTextFieldEnd]"></ng-content>
+</div>

@@ -1,0 +1,336 @@
+@use '../../../styles/common' as common;
+@use '../../../styles/tools' as tools;
+
+sl-text-field {
+
+	// el wrapper es el que da forma al input, no importa si dentro hay un textarea o un select
+	.sl-text-field__wrapper {
+		display: flex;
+		align-items: center;
+		position: relative;
+		// Mobile first: tamaño base para xs/sm
+		min-height: common.rem(44);
+		padding: 0 var(--sl-spacing-03);
+		background-color: transparent;
+		border: 1px solid var(--sl-primary01-background-default);
+		gap: var(--sl-spacing-02);
+		color: var(--sl-color-neutrals-0);
+		border-radius: var(--sl-spacing-02);
+		margin: 1rem 0;
+
+		&:hover {
+			box-shadow: 0 0 0 0.5px var(--sl-primary01-border-active) inset;
+		}
+
+		// Progresión lógica y consistente
+		@include tools.md {
+			min-height: common.rem(46);
+			padding: 0 var(--sl-spacing-03);
+		}
+
+		@include tools.lg {
+			min-height: common.rem(48);
+			padding: 0 var(--sl-spacing-04);
+		}
+
+		@include tools.xl {
+			min-height: common.rem(52);
+			padding: 0 var(--sl-spacing-04);
+		}
+
+		@include tools.xxl {
+			min-height: common.rem(56);
+			padding: 0 var(--sl-spacing-05);
+		}
+
+		@include tools.tv {
+			min-height: common.rem(64);
+			padding: 0 var(--sl-spacing-06);
+			border-radius: var(--sl-spacing-03);
+			gap: var(--sl-spacing-03);
+		}
+
+		@include tools.tv-4k {
+			min-height: common.rem(80);
+			padding: 0 var(--sl-spacing-08);
+			border-radius: var(--sl-spacing-04);
+			gap: var(--sl-spacing-04);
+		}
+	}
+
+	// cambiamos el padding derecho para que el scroll del textarea salga junto al borde
+	&:has(textarea) {
+		.sl-text-field__wrapper {
+			padding-right: 1px;
+		}
+	}
+
+	&:has(select) {
+		.sl-text-field__control {
+			position: static;
+			padding: 0;
+		}
+
+		.sl-text-field__wrapper::after {
+			content: 'keyboard_arrow_down';
+			font-family: 'Material Symbols Outlined';
+			font-size: common.rem(24);
+			color: var(--sl-primary01-icon-link);
+
+			@include tools.tv {
+				font-size: common.rem(32);
+			}
+
+			@include tools.tv-4k {
+				font-size: common.rem(48);
+			}
+		}
+
+		// no podemos abrir el select programáticamente cuando se interactua con parte del componente
+		// asique a diferencia del input, tenemos que posicionar el select para que ocupe todo el espacio
+		// esto no lo hizimos con el input para no tener que calcular dinámicamente el padding derecho
+		// si se incluye un icono por ejemplo
+		select {
+			position: absolute;
+			inset: 0;
+			padding: 0 var(--sl-spacing-03) 0 var(--sl-spacing-03);
+		}
+	}
+
+	// para el select, ocultamos el label cuando hay valor
+	&.sl-text-field--with-value:has(select) {
+		.sl-label {
+			font-size: 0;
+			height: 0;
+			width: 0;
+		}
+	}
+
+	// wrapper del control
+	.sl-text-field__control {
+		position: relative;
+		padding: var(--sl-spacing-03) 0 var(--sl-spacing-01) 0;
+		flex-grow: 1;
+		align-self: stretch;
+	}
+
+	// resetea los estilos de los inputs - Mobile first con progresión lógica
+	input,
+	textarea,
+	select {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		font: var(--sl-font-body-s);  // Base: mobile pequeño
+		background: none;
+		border: none;
+		appearance: none;
+		outline: none;
+		text-align: left;
+		color: var(--sl-color-neutrals-0);
+
+		@include tools.sm {
+			font: var(--sl-font-body-m);
+		}
+
+		@include tools.lg {
+			font: var(--sl-font-body-l);
+		}
+
+		@include tools.xl {
+			font: var(--sl-font-body-l);
+		}
+
+		@include tools.xxl {
+			font: var(--sl-font-body-xl);
+		}
+
+		@include tools.tv {
+			font: var(--sl-font-body-xxl);
+		}
+
+		@include tools.tv-4k {
+			font: var(--sl-font-body-xxl);
+			// Para 4K, escalar aún más si es necesario
+			font-size: calc(var(--sl-font-body-xxl-font-size) * 1.5);
+		}
+	}
+
+	input,
+	select {
+		overflow: hidden;
+		height: 100%;
+	}
+
+	textarea {
+		overflow: auto;
+	}
+
+	.sl-label {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		transition:
+			transform 0.1s,
+			font-size 0.1s,
+			top 0.1s;
+		font: var(--sl-font-body-s);  // Base: mobile
+
+		@include tools.sm {
+			font: var(--sl-font-body-m);
+		}
+
+		@include tools.lg {
+			font: var(--sl-font-body-l);
+		}
+
+		@include tools.xl {
+			font: var(--sl-font-body-l);
+		}
+
+		@include tools.xxl {
+			font: var(--sl-font-body-xl);
+		}
+
+		@include tools.tv {
+			font: var(--sl-font-body-xxl);
+		}
+
+		@include tools.tv-4k {
+			font: var(--sl-font-body-xxl);
+			font-size: calc(var(--sl-font-body-xxl-font-size) * 1.5);
+		}
+	}
+
+	.sl-label,
+	sl-icon {
+		color: var(--sl-color-neutrals-60);
+	}
+
+	&:not(.sl-text-field--disabled) {
+		cursor: text;
+
+		.sl-label,
+		sl-icon {
+			cursor: text;
+		}
+	}
+
+	// se aplica el estilo de label flotante
+	&:focus-within,
+	&.sl-text-field--with-value,
+	&:has(textarea) {
+		.sl-label {
+			transform: translateY(-50%);
+			color: var(--sl-color-neutrals-40);
+			
+			// Mobile (xs/sm)
+			font: var(--sl-font-body-xs);
+			top: 0.6rem;
+
+			@include tools.md {
+				top: 0.7rem;
+			}
+
+			@include tools.lg {
+				top: 0.8rem;
+			}
+
+			@include tools.xl {
+				font: var(--sl-font-body-xs);
+				top: 0.9rem;
+			}
+
+			@include tools.xxl {
+				font: var(--sl-font-body-s);
+				top: 1rem;
+			}
+
+			@include tools.tv {
+				font: var(--sl-font-body-m);
+				top: 1.2rem;
+			}
+
+			@include tools.tv-4k {
+				font: var(--sl-font-body-l);
+				top: 1.5rem;
+			}
+		}
+	}
+
+	// estado disabled
+	&.sl-text-field--disabled {
+		.sl-text-field__wrapper {
+			background-color: var(--sl-neutrals-background-disabled);
+			border-color: var(--sl-neutrals-border-disabled);
+		}
+
+		sl-icon,
+		.sl-label {
+			color: var(--sl-color-neutrals-text-disabled);
+		}
+
+		.sl-text-field__wrapper::after {
+			color: var(--sl-neutrals-icon-disabled);
+		}
+	}
+
+	// estado invalid
+	&.sl-text-field--invalid {
+		.sl-text-field__wrapper {
+			border-color: var(--sl-error-border-default);
+		}
+	}
+
+	// estado focus
+	&:focus-within {
+		.sl-text-field__wrapper {
+			box-shadow: 0 0 0 1px var(--sl-primary01-border-active) inset;
+		}
+
+		&.sl-text-field--invalid {
+			.sl-text-field__wrapper {
+				box-shadow: 0 0 0 1px var(--sl-error-border-default) inset;
+			}
+		}
+	}
+
+	// Estilos para iconos clickables
+	&.sl-text-field--icon-clickable:not(.sl-text-field--disabled) {
+		[slTextFieldEnd],
+		[slTextFieldStart] {
+			cursor: pointer !important;
+			transition: all 0.2s ease;
+			border-radius: var(--sl-spacing-01);
+			padding: var(--sl-spacing-01);
+			margin: calc(var(--sl-spacing-01) * -1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				background-color: var(--sl-primary01-background-weak);
+				
+				sl-icon {
+					color: var(--sl-primary01-icon-link) !important;
+				}
+			}
+
+			&:active {
+				background-color: var(--sl-primary01-background-default);
+				transform: scale(0.95);
+				
+				sl-icon {
+					color: var(--sl-color-neutrals-0) !important;
+				}
+			}
+
+			// Focus visible para accesibilidad (navegación por teclado)
+			&:focus-visible {
+				outline: 2px solid var(--sl-primary01-border-active);
+				outline-offset: 2px;
+			}
+		}
+	}
+}

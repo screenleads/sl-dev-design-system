@@ -1,63 +1,221 @@
 @use 'sass:map';
 
 // ===================
-// ** Media Queries **
+// ** Breakpoints **
+// ===================
+// Sistema mejorado con cobertura completa mobile → TV 4K
+// Inspirado en Bootstrap 5 y Material Design
+
+$xs: 0;           // Extra small: Mobile portrait (320px - 575px)
+$sm: 576px;       // Small: Mobile landscape / Phablets (≥576px)
+$md: 768px;       // Medium: Tablets portrait (≥768px)
+$lg: 992px;       // Large: Tablets landscape / Small desktops (≥992px)
+$xl: 1200px;      // Extra large: Desktops (≥1200px)
+$xxl: 1400px;     // Double extra large: Large desktops (≥1400px)
+$tv: 1920px;      // TV Full HD (≥1920px)
+$tv-4k: 3840px;   // TV 4K Ultra HD (≥3840px)
+
+// Mapa de breakpoints para facilitar iteración
+$breakpoints: (
+	'xs': $xs,
+	'sm': $sm,
+	'md': $md,
+	'lg': $lg,
+	'xl': $xl,
+	'xxl': $xxl,
+	'tv': $tv,
+	'tv-4k': $tv-4k
+);
+
+// ===================
+// ** Media Queries - Mobile First **
 // ===================
 
-$mediumMinWidth: 992;
-$largeMinWidth: 1250;
-$extraLargeMinWidth: 1800;
+// Extra Small (xs) - Mobile portrait
+// Default: sin media query (mobile first)
+@mixin xs-only {
+	@media (max-width: $sm - 1) {
+		@content;
+	}
+}
+
+// Small (sm) - Mobile landscape / Phablets
+@mixin sm {
+	@media (min-width: $sm) {
+		@content;
+	}
+}
+
+@mixin sm-only {
+	@media (min-width: $sm) and (max-width: $md - 1) {
+		@content;
+	}
+}
+
+// Medium (md) - Tablets portrait
+@mixin md {
+	@media (min-width: $md) {
+		@content;
+	}
+}
+
+@mixin md-only {
+	@media (min-width: $md) and (max-width: $lg - 1) {
+		@content;
+	}
+}
+
+// Large (lg) - Tablets landscape / Small desktops
+@mixin lg {
+	@media (min-width: $lg) {
+		@content;
+	}
+}
+
+@mixin lg-only {
+	@media (min-width: $lg) and (max-width: $xl - 1) {
+		@content;
+	}
+}
+
+// Extra Large (xl) - Desktops
+@mixin xl {
+	@media (min-width: $xl) {
+		@content;
+	}
+}
+
+@mixin xl-only {
+	@media (min-width: $xl) and (max-width: $xxl - 1) {
+		@content;
+	}
+}
+
+// Double Extra Large (xxl) - Large desktops
+@mixin xxl {
+	@media (min-width: $xxl) {
+		@content;
+	}
+}
+
+@mixin xxl-only {
+	@media (min-width: $xxl) and (max-width: $tv - 1) {
+		@content;
+	}
+}
+
+// TV Full HD
+@mixin tv {
+	@media (min-width: $tv) {
+		@content;
+	}
+}
+
+@mixin tv-only {
+	@media (min-width: $tv) and (max-width: $tv-4k - 1) {
+		@content;
+	}
+}
+
+// TV 4K Ultra HD
+@mixin tv-4k {
+	@media (min-width: $tv-4k) {
+		@content;
+	}
+}
+
+// ===================
+// ** Orientación **
+// ===================
+
+@mixin landscape {
+	@media (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin portrait {
+	@media (orientation: portrait) {
+		@content;
+	}
+}
+
+// Combinaciones útiles
+@mixin mobile-landscape {
+	@media (max-width: $md - 1) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+	@media (min-width: $md) and (max-width: $lg - 1) and (orientation: portrait) {
+		@content;
+	}
+}
+
+// ===================
+// ** Aliases Legacy (Retrocompatibilidad) **
+// ===================
+// Mantener los mixins antiguos para no romper componentes existentes
+// DEPRECADOS: Usar los nuevos xs, sm, md, lg, xl, xxl, tv, tv-4k
 
 @mixin small {
-	@media only screen and (max-width: $mediumMinWidth - 1px) {
+	@include xs-only {
 		@content;
 	}
 }
 
 @mixin fromMedium {
-	@media (min-width: $mediumMinWidth * 1px) {
+	@include lg {
 		@content;
 	}
 }
 
 @mixin medium {
-	@media (min-width: $mediumMinWidth * 1px) and (max-width: $largeMinWidth - 1px) {
+	@include lg-only {
 		@content;
 	}
 }
 
 @mixin fromLarge {
-	@media (min-width: $largeMinWidth * 1px) {
+	@include xl {
 		@content;
 	}
 }
 
 @mixin large {
-	@media only screen and (min-width: $largeMinWidth * 1px) and (max-width: $extraLargeMinWidth - 1px) {
+	@include xl-only {
 		@content;
 	}
 }
 
 @mixin extraLarge {
-	@media only screen and (min-width: $extraLargeMinWidth * 1px) {
+	@include xxl {
 		@content;
 	}
 }
 
+@mixin tvLarge {
+	@include tv {
+		@content;
+	}
+}
+
+// Navigation mixins (mantener si se usan en otros componentes)
 @mixin navigationMedium {
-	@media only screen and (min-width: 1024px) and (max-width: 1249px) {
+	@media (min-width: 1024px) and (max-width: 1249px) {
 		@content;
 	}
 }
 
 @mixin navigationSmall {
-	@media only screen and (max-width: 1023px) {
+	@media (max-width: 1023px) {
 		@content;
 	}
 }
 
 @mixin fromNavigationMedium {
-	@media only screen and (min-width: 1024px) {
+	@media (min-width: 1024px) {
 		@content;
 	}
 }
