@@ -28,7 +28,7 @@ jobs:
         run: npm ci
       
       - name: Build library
-        run: npm run build sl-dev-components
+        run: npx ng build sl-dev-components
       
       - name: Publish to npm with provenance
         working-directory: ./dist/sl-dev-components
