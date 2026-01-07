@@ -25,13 +25,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Install dependencies
+        working-directory: ./sl-dev-design-system
         run: npm ci
       
       - name: Build library
+        working-directory: ./sl-dev-design-system
         run: npx ng build sl-dev-components
       
       - name: Publish to npm with provenance
-        working-directory: ./dist/sl-dev-components
+        working-directory: ./sl-dev-design-system/dist/sl-dev-components
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
